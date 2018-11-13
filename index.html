@@ -7,7 +7,9 @@
 		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 		<title>Histórico Político</title>
-
+		
+		<script type="text/script" src="js/jquery.min.js"></script>
+		
 		<!-- Google font -->
 		<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:700%7CNunito:300,600" rel="stylesheet"> 
 
@@ -19,7 +21,6 @@
 
 		<!-- Custom stlylesheet -->
 		<link type="text/css" rel="stylesheet" href="css/style.css"/>
-
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
@@ -40,16 +41,16 @@
 						<!-- logo -->
 						<div class="nav-logo">
 							<a href="index.html" class="logo">
-								<label class="text">HP</label></a>
-								<!-- <img src="./img/Brasil-logo.png" alt=""></a> -->
+								<!-- <label class="text">HP</label></a> -->
+								<img src="./img/logo.png" alt=""></a>
 						</div>
 						<!-- /logo -->
 
 						<!-- nav -->
 						<ul class="nav-menu nav navbar-nav">
 							<li><a href="index.html">Últimas Notícias</a></li>
-							<li><a href="index.html">Partidos</a></li>
-							<li><a href="index.html">Sobre nós</a></li>
+							<li><a href="partidos.html">Partidos</a></li>
+							<li><a href="about.html">Sobre nós</a></li>
 						</ul>
 						<!-- /nav -->
 
@@ -58,7 +59,7 @@
 							<button class="aside-btn"><i class="fa fa-bars"></i></button>
 							<button class="search-btn"><i class="fa fa-search"></i></button>
 							<div class="search-form">
-								<input class="search-input" type="text" name="search" placeholder="Enter Your Search ...">
+								<input class="search-input" type="text" id="iptSearch" name="search" placeholder="Enter Your Search ...">
 								<button class="search-close"><i class="fa fa-times"></i></button>
 							</div>
 						</div>
@@ -699,4 +700,15 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 		<script src="js/main.js"></script>
 
 	</body>
+
+	<script type="text/javascript">
+
+		$("#iptSearch").keypress(function(){
+			var keycode = (event.keyCode ? event.keyCode : event.which);
+			if(keycode == '13'){
+				window.location.replace("searchResult.html");
+			}
+		});
+
+		</script>
 </html>

@@ -88,4 +88,20 @@
 
 	setStickyPos();
 
+
+	function carregaPartidos(){
+		$ajax({
+			url:"https://dadosabertos.camara.leg.br/api/v2/partidos",
+			success: function(result){
+				for(i=0; i < result.length; i++){
+					
+					$("#ulPartidos").append(
+						'<li>'+
+						'	<a href="#">' + result[i].sigla + '</a>' +
+						'</li>'
+					);
+				}
+			}
+		});
+	}
 })(jQuery);
